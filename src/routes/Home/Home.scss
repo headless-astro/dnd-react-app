@@ -1,14 +1,24 @@
 @import '../../styles/colors';
 
 .home .top {
-  background: url('../../img/poster.jpg') no-repeat center/cover;
+  background: url('https://thetrove.is/images/header-bg/rotfm.jpg') no-repeat center/cover;
   background-attachment: fixed;
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .home .logo {
-  max-width: 1200px;
+  max-width: 1000px;
   display: block;
   margin: 0 auto;
+}
+.home .main {
+  background-color: $color-black-dark;
+  border-bottom: 1px solid $color-secondary;
+}
+.home .bottom {
+  background-color: $color-black-dark;
 }
 
 /*--------------------------------------------------------------
@@ -17,7 +27,7 @@ If no grid support, limit width to 50em and center align
 @supports not (display: grid) {
   .home .top,
   .home .main,
-  .home .sidebar {
+  .home .bottom {
     max-width: 50em;
     margin: 0 auto;
   }
@@ -36,28 +46,19 @@ CSS Grid layout for wider screens, when browser supports grid:
     grid-area: home-main;
   }
 
-  .home .sidebar {
-    grid-area: home-sidebar;
+  .home .bottom {
+    grid-area: home-bottom;
   }
 
   @media screen and (min-width: 800px) {
     .home {
       display: grid;
       grid-template-columns: 3fr 1fr;
-      grid-template-rows: 2fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
       grid-template-areas:
         'home-top home-top'
-        'home-main home-sidebar';
-    }
-  }
-
-  @media screen and (min-width: 1200px) {
-    .home {
-      grid-template-columns: 3fr 1fr;
-      grid-template-rows: 2fr 1fr;
-      grid-template-areas:
-        'home-top home-top'
-        'home-main home-sidebar';
+        'home-main home-main'
+        'home-bottom home-bottom';
     }
   }
 }

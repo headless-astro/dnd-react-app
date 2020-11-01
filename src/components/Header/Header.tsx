@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Link from '../Link';
 
 import './Header.scss';
-import brand from '../../img/favicon.png';
+import brand from '../../img/logo-mini.png';
 
 type Props = JSX.IntrinsicElements['header'] & {
   path?: string;
