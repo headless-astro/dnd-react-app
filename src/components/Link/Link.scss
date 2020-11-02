@@ -9,19 +9,21 @@
   border-radius: 9px;
   white-space: nowrap;
   outline: none;
-  color: $color-secondary-dark;
+}
+
+a.Link {
+  text-decoration: none;
 }
 
 .Link.variant--Cta {
-  color: $color-secondary-dark;
-  background-color: $color-primary;
+  color: $color-white;
+  background-color: $color-cta;
   -webkit-transition-property: background-color, opacity;
   transition-property: background-color, opacity;
 }
 
 .Link.variant--Cta:hover {
-  background-color: $color-primary-light;
-  color: $color-secondary-light;
+  background-color: $color-cta-light;
 }
 
 .Link.variant--Link {
@@ -30,7 +32,7 @@
 }
 
 .Link.variant--Link:hover {
-  color: $color-secondary-light;
+  color: $color-black-light;
 }
 
 .Link.variant--Large {

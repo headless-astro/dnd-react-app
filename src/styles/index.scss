@@ -11,12 +11,6 @@ html {
 
 body {
   margin: 0;
-  box-sizing: border-box;
-  background-color: $color-black-dark;
-}
-
-* {
-  box-sizing: inherit;
 }
 
 img {
@@ -68,7 +62,9 @@ body,
 button,
 input,
 select,
-textarea {
+textarea,
+a {
+  color: $color-black-dark;
   font-family: 'Exo', sans-serif;
   font-size: 18px;
   line-height: 1.5;
@@ -92,7 +88,6 @@ General styles
 
 .fullpage {
   min-height: 100vh;
-  position: relative;
 }
 
 .main-content {
@@ -134,15 +129,21 @@ CSS Flexbox layout for wider screens, when browser supports flexbox:
     flex-direction: column;
   }
 
-  .flex-item.item {
+  .flex-item {
     display: inherit;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
   }
 
+  .flex-item p {
+    width: 100%;
+    text-align: center;
+    color: $color-white;
+  }
+
   //use a second flex in main-content to force max available height
-  .main-content.content {
+  .main-content {
     display: flex;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
