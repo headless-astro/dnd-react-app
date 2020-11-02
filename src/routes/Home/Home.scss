@@ -1,35 +1,23 @@
 @import '../../styles/colors';
-@import '../../styles/index';
 
-#main {
-  background-color: $color-black-dark;
-  border-bottom: 3px solid $color-secondary-dark;
-  min-height: 400px;
-  flex: 1;
-  flex-direction: column;
-  position: relative;
-  justify-content: center;
+.home .top {
+  background: url('../../img/poster.jpg') no-repeat center/cover;
+  background-attachment: fixed;
 }
 
-#bottom {
-  background-color: $color-black-dark;
-  min-height: 400px;
-  flex: 1;
-  flex-direction: column;
-  position: relative;
-  justify-content: center;
-}
-
-p {
-  color: white;
+.home .logo {
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto;
 }
 
 /*--------------------------------------------------------------
 If no grid support, limit width to 50em and center align
 --------------------------------------------------------------*/
 @supports not (display: grid) {
-  .home #main,
-  .home #bottom {
+  .home .top,
+  .home .main,
+  .home .sidebar {
     max-width: 50em;
     margin: 0 auto;
   }
@@ -40,27 +28,36 @@ CSS Grid layout for wider screens, when browser supports grid:
 --------------------------------------------------------------*/
 
 @supports (display: grid) {
-  .home #main {
+  .home .top {
+    grid-area: home-top;
+  }
+
+  .home .main {
     grid-area: home-main;
   }
 
-  .home #bottom {
-    grid-area: home-bottom;
+  .home .sidebar {
+    grid-area: home-sidebar;
   }
 
   @media screen and (min-width: 800px) {
     .home {
       display: grid;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: 2fr 1fr;
       grid-template-areas:
-        'home-main home-main home-main home-main'
-        'home-bottom home-bottom home-bottom home-bottom';
+        'home-top home-top'
+        'home-main home-sidebar';
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .home {
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: 2fr 1fr;
+      grid-template-areas:
+        'home-top home-top'
+        'home-main home-sidebar';
     }
   }
 }

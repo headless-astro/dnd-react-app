@@ -8,11 +8,8 @@ footer {
   padding: 1em 2em;
   background: $color-black;
   color: $color-white;
-  min-height: 50px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  border-top: 3px solid $color-secondary-dark;
+  height: 120px;
+  min-height: 120px;
 }
 
 footer a {
