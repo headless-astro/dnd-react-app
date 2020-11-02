@@ -8,17 +8,15 @@ header {
   padding: 1em;
   background: $color-white;
   color: $color-white;
-  min-height: 60px;
+  min-height: 600px;
 }
 
 header.homepage {
-  background: url('../../img/poster.jpg') no-repeat center/cover;
-  background-attachment: fixed;
+  background: url('https://thetrove.is/images/header-bg/rotfm.jpg') no-repeat center/cover;
 }
 
 header img {
   display: inline;
-  width: 80px;
   margin: 0 auto;
 }
 
@@ -38,26 +36,3 @@ header a.active {
 /*--------------------------------------------------------------
 CSS Flexbox layout for wider screens, when browser supports flexbox:
 --------------------------------------------------------------*/
-
-@supports (display: flex) {
-  header .section-1 {
-    flex: 1;
-    align-items: center;
-    justify-content: flex-start;
-    display: flex;
-  }
-
-  header .section-2 {
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
-
-  header .section-3 {
-    flex: 1;
-    align-items: center;
-    justify-content: flex-end;
-    display: flex;
-  }
-}
