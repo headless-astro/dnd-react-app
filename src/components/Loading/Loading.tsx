@@ -1,5 +1,18 @@
 import React, { FC } from 'react';
 
-const Loading: FC = () => <p>Loading...</p>;
+import './Loading.css';
+
+const Loading: FC = () => (
+  <div className="loader-bars flex-container row">
+    <div className="loader-bar" />
+    <div className="loader-bar" />
+    <div className="loader-bar" />
+    <div className="loader-bar" />
+    <div className="loader-bar" />
+    <div className="loader-bar" />
+    <div className="loader-bar" />
+    <div className="loader-bar" />
+  </div>
+);
 
 export default Loading;

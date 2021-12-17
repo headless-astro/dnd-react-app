@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 
-import './Button.scss';
+import './Button.css';
 
-type Props = JSX.IntrinsicElements['button'] & {
+export type Props = JSX.IntrinsicElements['button'] & {
   primary?: boolean;
   type: 'button' | 'submit';
 };
 
-const Button: FC<Props> = ({ primary, className, children, onClick, type }) => {
+const Button: FC<Props> = ({ className, children, style, onClick, primary, type, disabled }) => {
   const baseStyle = 'button';
   const buttonStyle = primary ? `button-primary` : `button-secondary`;
   const classNames = className
@@ -15,8 +15,14 @@ const Button: FC<Props> = ({ primary, className, children, onClick, type }) => {
     : `${baseStyle} ${buttonStyle}`;
 
   return (
-    <button className={classNames} onClick={onClick} type={type === 'button' ? 'button' : 'submit'}>
-      {children}
+    <button
+      className={classNames}
+      style={style}
+      onClick={onClick}
+      type={type === 'button' ? 'button' : 'submit'}
+      disabled={disabled}
+    >
+      <div className="button-content">{children}</div>
     </button>
   );
 };

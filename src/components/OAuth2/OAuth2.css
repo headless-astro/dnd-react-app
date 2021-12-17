@@ -1,0 +1,87 @@
+.oauth-link {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+button.oauth-link {
+  text-decoration: none;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+button.oauth-link:disabled {
+  cursor: default;
+  background-color: var(--color-divider);
+}
+
+.oauth-link:hover {
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
+}
+
+/*
+Strategies
+*/
+.oauth-strategies {
+  max-width: 435px;
+}
+
+.oauth-strategies-top,
+.oauth-strategies-bottom {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 24px;
+}
+
+.oauth-strategies-bottom {
+  justify-content: center;
+  padding-bottom: 32px;
+}
+
+.oauth-strategies-bottom .oauth-badges {
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.oauth-badges .oauth-link {
+  margin-right: 12px;
+}
+
+/*
+Brand Colors
+*/
+.oauth-link.facebook {
+  background-color: #3763d2;
+}
+
+.oauth-link.twitter {
+  background-color: #1abcff;
+}
+
+.oauth-link.twitch {
+  background-color: #7b5dfa;
+}
+
+.oauth-link.google {
+  background-color: #fd434f;
+}
+
+.oauth-link.minecraft {
+  background-color: #00aa00;
+}
+
+.oauth-link.discord {
+  background-color: #7289da;
+}

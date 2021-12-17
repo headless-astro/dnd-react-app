@@ -1,0 +1,29 @@
+.lined-text {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-align: center !important;
+  position: relative;
+  padding: 10px;
+}
+
+.lined-text::after,
+.lined-text::before {
+  content: '';
+  width: 70px;
+  height: 1px;
+  background-color: var(--color-divider);
+  position: absolute;
+  top: 20px;
+}
+
+.lined-text::before {
+  left: 0;
+}
+
+.lined-text::after {
+  right: 0;
+}
+
+.error {
+  color: var(--color-danger);
+}

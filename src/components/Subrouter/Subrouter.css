@@ -1,0 +1,31 @@
+ol {
+  padding-left: 25px;
+}
+
+ul {
+  padding-left: 25px;
+}
+
+ul a {
+  text-decoration: none;
+}
+
+ol a {
+  text-decoration: none;
+}
+
+ul.sub-list {
+  font-size: 24px;
+}
+
+.has-subroute {
+  font-weight: 900;
+}
+
+.no-subroute {
+  font-weight: 400;
+}
+
+.subrouter .active {
+  color: var(--color-primary-light);
+}

@@ -1,0 +1,45 @@
+/*--------------------------------------------------------------
+If no grid support, limit width to 50em and center align
+--------------------------------------------------------------*/
+@supports not (display: grid) {
+  .news .main {
+    max-width: 50em;
+    margin: 0 auto;
+  }
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+
+@supports (display: grid) {
+  .news .main .banner {
+    grid-area: home-banner;
+  }
+
+  .news .main .posts {
+    grid-area: home-posts;
+  }
+
+  .news .main .sidebar {
+    grid-area: home-sidebar;
+    display: none;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .news .main .sidebar {
+      display: block;
+    }
+
+    .news .main {
+      display: grid;
+      grid-template-columns: 2fr 5fr 2fr 2fr;
+      grid-template-rows: 240px 4fr;
+      grid-template-areas:
+        '. home-banner home-banner .'
+        '. home-posts home-sidebar .';
+      column-gap: 16px;
+      row-gap: 16px;
+    }
+  }
+}

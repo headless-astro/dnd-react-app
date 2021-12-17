@@ -1,6 +1,30 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { Story, Meta } from '@storybook/react/types-6-0';
 
-import Footer from './Footer';
+import Footer, { Props } from './Footer';
 
-storiesOf('Footer', module).add('Default', () => <Footer />);
+type StoryProps = Props & {
+  text: string;
+};
+
+export default {
+  component: Footer,
+  title: '01 - Basic/Footer',
+  // creates specific argTypes with options
+  argTypes: {
+    text: {
+      defaultValue: 'Hello',
+      control: {
+        type: 'text',
+      },
+    },
+  },
+} as Meta;
+
+export const FooterStory: Story<StoryProps> = ({ text }) => {
+  return (
+    <Footer>
+      <p>{text}</p>
+    </Footer>
+  );
+};

@@ -1,0 +1,4 @@
+img.pixel-icon {
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}

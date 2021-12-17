@@ -1,0 +1,71 @@
+.home .top {
+  background: url('../../img/poster.jpg') no-repeat center/cover;
+  background-attachment: fixed;
+  margin-bottom: 20px;
+}
+
+.home .info {
+  text-align: center;
+  margin: 24px;
+  font-weight: 600;
+}
+
+.home .info p span {
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--color-base);
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.06);
+}
+
+.home .logo {
+  width: auto;
+  height: 540px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+  .home .logo {
+    height: 260px;
+  }
+}
+
+/*--------------------------------------------------------------
+If no grid support, limit width to 50em and center align
+--------------------------------------------------------------*/
+@supports not (display: grid) {
+  .home .main {
+    max-width: 50em;
+    margin: 0 auto;
+  }
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+
+@supports (display: grid) {
+  .home .main .posts {
+    grid-area: home-posts;
+  }
+
+  .home .main .sidebar {
+    grid-area: home-sidebar;
+    display: none;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .home .main .sidebar {
+      display: block;
+    }
+
+    .home .main {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: '. home-posts home-sidebar .';
+      column-gap: 16px;
+      row-gap: 16px;
+    }
+  }
+}

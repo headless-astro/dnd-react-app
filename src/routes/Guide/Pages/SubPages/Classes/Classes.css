@@ -1,0 +1,45 @@
+.skills img.pixel-icon {
+  width: 100px;
+  height: max-content;
+}
+
+.skills p {
+  padding-left: 20px;
+}
+
+.skills img {
+  border: solid 2px var(--color-text-dark);
+  border-radius: 9px;
+}
+
+.skills .section {
+  padding: 20px;
+}
+
+.skills .section:nth-child(odd) {
+  background-color: var(--color-divider);
+}
+
+.skills .section:nth-child(even) {
+  background-color: var(--color-base-light);
+}
+
+.skills .section:first-child {
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+.skills .section:last-child {
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.guide-page .card {
+  background-color: var(--color-base-light);
+}
+
+@media screen and (min-width: 800px) {
+  .guide-page .card {
+    margin: 0 0 0 16px;
+  }
+}
